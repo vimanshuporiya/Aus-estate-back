@@ -9,7 +9,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const app = express();
+const app = express({ origin: process.env.CLIENT_URL, credentials: true });
 const port = process.env.PORT || 8800
 app.use(cors());
 app.use(express.json());
