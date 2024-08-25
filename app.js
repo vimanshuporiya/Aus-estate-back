@@ -8,8 +8,8 @@ import userRoute from './routes/user.route.js'
 import dotenv from 'dotenv';
 
 dotenv.config();
-
-const app = express({ origin: process.env.https://main--frontend55.netlify.app/, credentials: true });
+CLIENT_URL = https://main--frontend55.netlify.app/
+const app = express({ origin: process.env.CLIENT_URL, credentials: true });
 const port = process.env.PORT || 8800
 app.use(cors());
 app.use(express.json());
