@@ -9,9 +9,29 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const app = express({ origin: process.env.CLIENT_URL, credentials: true });
+const app = express();
 const port = process.env.PORT || 8800
-app.use(cors());
+const corsOptions = {
+  origin: [`${process.env.CLIENT_URL}`],
+  methods: "GET,HEAD,PUT,OPTIONS,POST,DELETE",
+  allowedHeaders: [
+    "Access-Control-Allow-Headers",
+    "Origin",
+    "X-Requested-With",
+    "Content-Type",
+    "Accept",
+    "Authorization",
+    "token",
+    "Access-Control-Request-Method",
+    "Access-Control-Request-Headers",
+    "Access-Control-Allow-Credentials",
+  ],
+  credentials: true,
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
+};
+app.use(cors(corsOptions));
+
 app.use(express.json());
 app.use(cookieParser());
 
