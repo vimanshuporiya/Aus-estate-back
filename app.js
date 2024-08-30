@@ -34,7 +34,7 @@ const port = process.env.PORT || 8800
 app.use(function(req, res, next) {
       // res.header("Access-Control-Allow-Origin", "*");
 // , 'https://gamebrag.onrender.com'
-      const allowedOrigins = ['http://localhost:5173', 'https://ausnew.netlify.app'];
+      const allowedOrigins = ['http://localhost:5173', 'https://ausnew.netlify.app', 'https://66d1eea50a8c1005ea8a56e1--ausnew.netlify.app'];
       const origin = req.headers.origin;
       if (allowedOrigins.includes(origin)) {
            res.setHeader('Access-Control-Allow-Origin', origin);
